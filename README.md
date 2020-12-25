@@ -31,3 +31,38 @@ css3 learning note
 :enabled选择器定义表单元素“可用”时的样式；:disabled选择器来定义表单元素“不可用”（disabled）时的样式。
 #### （5）:read-write和:read-only
 :read-write选择器定义表单元素“可读写”时的样式；:read-only选择器定义表单元素“只读”（readonly）时的样式。
+
+### 4、其他伪类选择
+#### （1）:root
+选择HTML页面的根元素（即整个页面）<br>
+        :root{background-color:gray;}
+        html{background-color:gray;}
+以上两句代码等价，同时，如果想要设置整个页面的背景色，我们应该针对html元素来设置，而不是body元素。
+#### （2）:empty
+选择一个空元素
+#### （3）:target
+选取页面中的某一个target元素（所谓的target元素，指的是id被当成页面的锚点链接来使用的元素），如：
+
+        <a href="#music">推荐音乐</a><br />
+        
+        <div id="music">
+            <h3>推荐音乐</h3>
+            <ul>
+                <li>林俊杰-被风吹过的夏天</li>
+                <li>曲婉婷-在我的歌声里</li>
+                <li>许嵩-灰色头像</li>
+            </ul>
+        </div>
+点击“推荐音乐”链接，则可跳转到div元素所在位置
+#### （4）:not()
+选取某一个元素之外的所有元素，如：
+
+        ul li:not(.first)
+即选取除了class="first"以外的li元素
+    
+    
+    
+    
+    
+    
+    
