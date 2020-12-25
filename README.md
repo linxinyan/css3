@@ -59,10 +59,45 @@ css3 learning note
 
         ul li:not(.first)
 即选取除了class="first"以外的li元素
-    
-    
-    
-    
-    
-    
-    
+
+## 三、文本样式
+### 1、文本阴影 text-shadow
+        text-shadow:x-offset  y-offset  blur  color;
+文字凸起效果：向左和向上的阴影颜色设置为白色 <br>
+文字凹陷效果：向右和向下的阴影颜色设置为白色<br>
+`text-shadow还可为文本定义多个阴影，并且针对每个阴影使用不同的颜色。如：`<br>
+
+        text-shadow:0 0 4px red,  0 -5px 4px green,  2px -10px 6px blue;
+当text-shadow属性是一个值列表时，阴影效果会按从左到右的顺序应用到文本上，因此可能会出现相互覆盖的效果。但是text-shadow属性永远不会覆盖文本本身     
+### 2、文本描边 text-stroke       
+          text-stroke:width color;     
+若将文字颜色设为 color:transparent;再使用text-stroke则可实现镂空文字
+### 3、文本溢出 text-overflow
+        text-overflow:取值;   //取值为ellipsis，当文本溢出时，显示省略号，并且隐藏多余的文字；取值为clip，则将溢出的文字裁切掉
+实现单行文本的省略号效果：
+
+        overflow:hidden; 
+        white-space:nowrap;
+        text-overflow:ellipsis; 
+若想实现“多行文本”的省略号效果，必须借助JavaScript或jQuery。JQuery可通过插件jquery.dotdotdot.js实现该效果
+### 4、强制换行 word-wrap和word-break
+定义长单词或URL地址是否换行到下一行
+
+        word-wrap:取值;  //取值为normal，自动换行（默认值）；取值为break-word，强制换行 
+        
+        word-break:取值; //取值为normal，自动换行（默认值）；break-all，允许在单词内换行；keep-all，只能在半角空格或连字符处换行
+* 重点掌握 word-wrap:break-word;和word-break:break-all <br>
+* word-wrap:break-word; 会首先尝试挪到下一行，看看下一行的宽度够不够，不够的话再进行单词内的断句。
+* word-break:break-all; 不会尝试把长单词挪到下一行，而是直接就进行单词内的断句。
+* 注：word-wrap和word-break这两个属性都是针对英文页面来说的   
+### 5、嵌入字体：@font-face  
+加载服务器端的字体，从而使得所有用户都能正常显示该字体
+
+        @font-face
+        {
+            font-family: 字体名称;
+            src:url(文件路径);
+        }
+src属性中的“文件路径”指的是服务器端中字体文件的路径 <br>
+`注：不建议使用@font-face来实现嵌入中文字体。这是因为中文字体文件大多数都是10MB以上。这么大的字体文件，会严重影响页面的加载速度，导致用户体验非常差。不过对于英文字体来说，字体文件往往只有几十KB，非常适合使用@font-face。`
+
