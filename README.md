@@ -15,7 +15,7 @@ css3 learning note
     E[attr$=“xxx”]	 选择属性是以xxx结尾的元素E
     E[attr*=“xxx”]	 选择属性包含xxx的元素E
 ### 2、子类
-    (1):first-child、:last-child、:nth-child(n)、:only-child
+    (1):first-child、:last-child、:nth-child(n)、:only-child  (:nth-child(n)中n取值有3种：数字、odd和even，其中n从1开始）
     (2):first-of-type、:last-of-type、:nth-of-type(n)、:only-of-type 
 * :first-child在选择父元素下的子元素时，不仅要区分元素类型，还要求是第一个子元素。而:first-of-type在选择父元素下的子元素时，只需要区分元素类型，不要求是第一个子元素
 
