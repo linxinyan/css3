@@ -15,3 +15,4 @@ css3 learning note
 * E[attr^=“xxx”]	选择属性是以xxx开头的元素E
 * E[attr$=“xxx”]	选择属性是以xxx结尾的元素E
 * E[attr*=“xxx”]	选择属性包含xxx的元素E
+* 2、子类
