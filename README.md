@@ -106,6 +106,33 @@ src属性中的“文件路径”指的是服务器端中字体文件的路径 <
         opacity:数值; //取值范围为0.0~1.0,0.0表示完全透明，1.0表示完全不透明。
  opacity属性在实际开发用得比较多，大多数时候都是配合:hover来定义鼠标移动到某个按钮或图片上时，改变透明度来呈现动态的效果。       
 ### 2、RGBA颜色
-        rgba(R,G,B,A); //R指红色值（Red）；G指绿色值（Green）；B指蓝色值（Blue）；A指透明度（Alpha）。R、G、B这三个可以为整数，取值范围为0~255，也可以为百分比，取值范围为0%~100%。参数A为透明度，跟opacity属性是一样的，取值范围为0.0~1.0。
+        rgba(R,G,B,A); //R指红色值（Red）；G指绿色值（Green）；B指蓝色值（Blue）；A指透明度（Alpha）。
+                         R、G、B这三个可以为整数，取值范围为0~255，也可以为百分比，取值范围为0%~100%。
+                         参数A为透明度，跟opacity属性是一样的，取值范围为0.0~1.0。
 *  如果对某个元素使用opacity属性，则该元素中的所有的子元素以及文本内容都会受到影响。 
 *  而RGBA中的透明度只会针对当前设置的属性起作用
+### 3、CSS3渐变
+#### （1）线性渐变
+       background:linear-gradient(方向, 开始颜色, 结束颜色) //方向取值有两种:一种是使用角度（单位为deg）;另外一种是使用关键字，如下所示：
+        属性值	        对应角度	   说明
+        to top	        0deg	     从下到上
+        to bottom	    180deg	     从上到下（默认值）
+        to left	        270deg	     从右到左
+        to right	    90deg	     从左到右
+        to top left	    无	        从右下角到左上角（斜对角）
+        to top right	无	        从左下角到右上角（斜对角）
+*  线性渐变也可以接受一个“值列表”，用于同时定义多种颜色的线性渐变，颜色值之间用英文逗号隔开即可。如：<br>
+* background:linear-gradient(to right, red, orange, yellow, green, blue);
+#### （2）径向渐变
+颜色从内到外进行的圆形（椭圆）渐变。颜色不再沿着一条直线渐变，而是从一个起点向所有方向渐变。
+        
+        background:radial-gradient(position, shape size, start-color, stop-color)
+        //position用于定义圆心位置。shape size用于定义形状大小，由两部分组成，shape定义形状，size定义大小。
+          其中，position和shape size都是可选参数。如果省略，则表示采用默认值。start-color和stop-color都是必选参数，可以有多个颜色值。        
+圆心位置position<br>
+取值有两种：一种是“长度值”（如10px）；另外一种是“关键字”（center（默认值），top，bottom，left，right，<br>
+top center靠上居中，top left左上，left center靠左居中，bottom left左下等 [top,center,bottom与left,center,bottom的组合]）<br>
+<br>
+shape 取值：ellipse椭圆形（默认值）,circle	圆形 <br>
+* 径向渐变也可以接受一个“值列表”，用于同时定义多种颜色的径向渐变。默认情况下，径向渐变的颜色节点是均匀分布的，不过我们可以为每一种颜色添加百分比，从而使得各个颜色节点不均匀分布。
+* 在真正的开发中，大多数渐变效果都是线性渐变，重点掌握线性渐变
