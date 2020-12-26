@@ -171,7 +171,7 @@ shape 取值：ellipse椭圆形（默认值）,circle	圆形 <br>
             width: 100px;
             height: 100px;
             border: 1px solid gray;
-            border-top-left-radius: 100px;
+            border-top-left-radius: 100px; //定义了一个左上的扇形，之后把该扇形的底边和右边设为0px，得到圆弧
             border-bottom-width: 0;
             border-right-width: 0;
         }
