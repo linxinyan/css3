@@ -178,8 +178,9 @@ shape 取值：ellipse椭圆形（默认值）,circle	圆形 <br>
                    0 -5px 12px yellow,
                    0 5px 12px blue,
                    5px 0 12px green;
-
-
-
+### 3、边框背景 border-image
+        border-image:url() 图片切割宽度 图片平铺方式; //切割宽度：四条边的切割宽度，依次为上边、右边、下边、左边（顺时针）。
+                                                       平铺方式：有3种取值，分别为repeat、round和stretch。
+        
 
 
