@@ -179,8 +179,24 @@ shape 取值：ellipse椭圆形（默认值）,circle	圆形 <br>
                    0 5px 12px blue,
                    5px 0 12px green;
 ### 3、边框背景 border-image
-        border-image:url() 图片切割宽度 图片平铺方式; //切割宽度：四条边的切割宽度，依次为上边、右边、下边、左边（顺时针）。
-                                                       平铺方式：有3种取值，分别为repeat、round和stretch。
+        border-image:url() 图片切割宽度 图片平铺方式; //切割宽度：四条边的切割宽度，依次为上、右、下、左（顺时针）。
         
-
+        平铺方式：有3种取值，分别为repeat、round和stretch。
+        取值为repeat时，表示4条边的小方块会不断重复，超出元素部分将会被剪切掉。
+        取值为round时，表示4条边的小方块会铺满。为了铺满，边框图片会压缩或拉伸。
+        取值为stretch时，表示4条边的小方块会拉伸，边长有多长就拉多长。
+        
+        eg：
+        div
+        {
+            width:210px;
+            height:150px;
+            border:30px solid gray;
+            border-image:url(img/border.png) 30 repeat; //边框背景图片每条边的宽度跟对应的边框宽度（即border-width）应该相同。
+        }
+border-image的派生子属性：<br>
+border-top-image	定义上边框背景图片<br>
+border-bottom-image	定义下边框背景图片<br>
+border-left-image	定义左边框背景图片<br>
+border-right-image	定义右边框背景图片<br>
 
