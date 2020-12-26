@@ -158,6 +158,23 @@ shape 取值：ellipse椭圆形（默认值）,circle	圆形 <br>
         
         //border-radius实现椭圆
         border-radius:x/y; //x表示圆角的水平半径，y表示圆角的垂直半径
+        
+        //border-radius属性可以分别为4个角设置相应的圆角值，这4个角的属性如下。
+        border-top-right-radius：右上角
+        border-bottom-right-radius：右下角
+        border-bottom-left-radius：左下角
+        border-top-left-radius：左上角
+        
+        //定义一个半径为100px的左上圆弧
+        div 
+        {
+            width: 100px;
+            height: 100px;
+            border: 1px solid gray;
+            border-top-left-radius: 100px;
+            border-bottom-width: 0;
+            border-right-width: 0;
+        }
 ### 2、边框阴影 box-shadow
 #### （1）
         box-shadow:x-offset  y-offset  blur  spread  color  style;
