@@ -36,3 +36,52 @@
       transition-delay	    过渡的延迟时间（可选参数），默认值为0s，延迟开始呈现过渡效果，过渡效果也延迟恢复
 * 当transition-property属性定义为all时，CSS3会自动判断哪些属性是作为过渡效果的属性
 * transition属性写在普通状态和悬浮状态（即:hover{}）效果不同：移入时效果两者没有区别；transition属性写在普通状态内，移出时会有过渡效果；transition属性写在悬浮状态内，移出时没有过渡效果。
+## 三、CSS3动画（animation）
+对于transition属性来说，它只能将元素的某一个属性从一个属性值过渡到另一个属性值。<br>
+对于animation属性来说，它可以将元素的某一个属性从第1个属性值过渡到第2个属性值，然后还可以继续过渡到第3个属性值，以此类推。<br>
+* transition属性（即CSS3过渡）只能实现一次性的动画效果，而animation属性（即CSS3动画）可以实现连续性的动画效果。
+
+        animation: 动画名称 持续时间 动画方式 延迟时间 动画次数 动画方向;
+        
+        animation-name	对哪一个CSS属性进行操作
+        animation-duration	动画的持续时间
+        animation-timing-function	动画的速率方式
+        animation-delay	动画的延迟时间
+        animation-iteration-count	动画的播放次数
+        animation-direction	动画的播放方向，正向还是反向
+### 1、 定义动画 @keyframes    
+        @keyframes 动画名
+        {
+          0%{}      //0%表示动画的开始，100%表示动画的结束，0%和100%是必须的。
+          ……        //描述每个百分比（阶段）动画的样式，之后运行起来就是一段连续的动画变化了
+         100%{}
+        }
+        
+        @keyframes mytransform
+        {
+            0%{border-radius:0;}
+            50%{border-radius:50px; transform:translateX(0);} //若是少了transform:translateX(0);，则从0%开始运动50px到100%
+            100%{-webkit-transform:translateX(50px);}
+        }
+        
+### 调用动画        
+        eg：
+        @keyframes mycolor
+        {
+            0%{background-color:red;}
+            30%{background-color:blue;}
+            60%{background-color:yellow;}
+            100%{background-color:green;}
+        }
+        div:hover
+        {
+            animation:mycolor 5s linear; //调用mycolor这个动画
+        }
+若想元素自动执行，而不是鼠标移到元素上时（:hover），动画才开始，则将调用动画的代码放在div元素，而不是在:hover伪类中     
+        
+        
+        
+        
+        
+        
+        
